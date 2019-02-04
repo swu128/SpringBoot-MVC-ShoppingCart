@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Item Page</title>
+</head>
+<body>
+	<h3>Item Page</h3>
+	<form action="#" th:action="@{/item}" th:object="${item}" method="post">
+	<table cellpadding="2" cellspacing="2" border="1">
+			<tr>
+				<th>TLD</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>.com</td>
+				<td><p th:text="'$' + ${item.comUpdatedPrice} " /></td>
+				 <input type="hidden" th:field="*{comUpdatedPrice}"/>
+			</tr>
+			<tr>
+				<td>.net</td>
+				<td><p th:text="'$' +${item.netUpdatedPrice}" /></td>
+				<input type="hidden" th:field="*{netUpdatedPrice}"/>
+			</tr>
+			<tr>
+				<td>.org</td>
+				<td><p th:text="'$' +${item.orgUpdatedPrice}" /></td>
+				<input type="hidden" th:field="*{orgUpdatedPrice}"/>
+			</tr>
+			<tr>
+				<td>.info</td>
+				<td><p th:text="'$' +${item.infoUpdatedPrice}" /></td>
+				<input type="hidden" th:field="*{infoUpdatedPrice}"/>
+			</tr>
+		</table>
+	<br>
+	<br>
+	<div>Enter full domain to purchase</div>
+	<div>
+		<tr>
+				<input type="text" th:field="*{userDomain}"/>
+				<td><input type="submit" value="Add to Cart" /></td>
+		</tr>
+	</div>
+</body>
+</html>

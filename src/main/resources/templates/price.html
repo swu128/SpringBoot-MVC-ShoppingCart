@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Price Page</title>
+</head>
+<body>
+
+	<h3>Price Set up</h3>
+	<h4>Default Prices</h4>
+	    <form action="#" th:action="@{/price}" th:object="${price}" method="post">
+		<table cellpadding="2" cellspacing="2" border="1">
+			<tr>
+				<th>TLD</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>.com</td>
+				<td>$15.99</td>
+			</tr>
+			<tr>
+				<td>.net</td>
+				<td>$9.99</td>
+			</tr>
+			<tr>
+				<td>.org</td>
+				<td>$11.25</td>
+			</tr>
+			<tr>
+				<td>.info</td>
+				<td>$1.00</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<h4>Update Prices </h4>
+		<table cellpadding="2" cellspacing="2" border="1">
+			<tr>
+				<th>TLD</th>
+				<th>Updated Price</th>
+			</tr>
+			<tr>
+				<td>.com</td>
+				<td><input type="text" th:field="*{comUpdatedPrice}"/></td>
+			</tr>
+			<tr>
+				<td>.net</td>
+				<td><input type="text" th:field="*{netUpdatedPrice}"/></td>
+			</tr>
+		<tr>
+				<td>.org</td>
+				<td><input type="text" th:field="*{orgUpdatedPrice}"/></td>
+			</tr>
+		<tr>
+				<td>.info</td>
+				<td><input type="text" th:field="*{infoUpdatedPrice}"/></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit" /></td>
+			</tr>
+		</table>
+	</form:form>
+	<br>
+</body>
+</html>
